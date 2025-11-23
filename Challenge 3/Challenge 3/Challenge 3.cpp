@@ -1,20 +1,46 @@
-// Challenge 3.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+//  main.cpp
+//  Challenge 3
+//
+//  Created by Kai on 23/11/2025.
 //
 
 #include <iostream>
+#include <string>
+#include <cmath>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main(int argc, const char* argv[]) {
+
+    double x;
+
+    std::cout << "Please enter a number: ";
+
+    while (!(std::cin >> x)) {
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
+        std::cerr << "[!] ERROR: I was expecting a number, not a string. Exiting.\n";
+        return 1;
+    }
+
+    double neg = -x;
+    double abs_x = std::abs(x);
+    double pow2 = x * x;
+    double pow3 = x * x * x;
+
+    double sqrt_x = std::sqrt(std::abs(x));
+
+    double floor_x = std::floor(x);
+    double ceil_x = std::ceil(x);
+    double round_x = std::round(x);
+
+    std::cout << "neg(x): " << neg << "\n";
+    std::cout << "abs(x): " << abs_x << "\n";
+    std::cout << "pow2(x): " << pow2 << "\n";
+    std::cout << "pow3(x): " << pow3 << "\n";
+    std::cout << "sqrt(x): " << sqrt_x << "\n";
+    std::cout << "floor(x): " << floor_x << "\n";
+    std::cout << "ceil(x): " << ceil_x << "\n";
+    std::cout << "round(x): " << round_x << "\n";
+
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
